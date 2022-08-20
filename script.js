@@ -25,13 +25,35 @@ function makeGridItem() {
     return gridItem;
 }
 
+const gridItems = document.querySelectorAll(".grid-item");
+
 function changeToBlack() {
+    this.classList.add("color");
     this.classList.add("color-black");
 }
 
-function switchToEraser() {
-
+function eraseColor() {
+    this.classList.remove("color");
 }
 
-const turnOffButton = document.querySelector(".removeColorBlack");
-turnOffButton.addEventListener("click", turnOffButton.removeEventListener("mouseOver,"));
+function switchToBlack() {
+    console.log("switching to black...")
+    gridItems.forEach((gridItem) => {
+        gridItem.removeEventListener("mouseover", eraseColor);
+        gridItem.addEventListener("mouseover", changeToBlack);
+    })
+}
+
+function switchToEraser() {
+    console.log("switching to eraser...")
+    gridItems.forEach((gridItem) => {
+        gridItem.removeEventListener("mouseover", changeToBlack);
+        gridItem.addEventListener("mouseover", eraseColor);
+    })
+}
+
+const blackButton = document.querySelector(".btn-black");
+blackButton.addEventListener("click", switchToBlack);
+
+const eraserButton = document.querySelector(".btn-eraser");
+eraserButton.addEventListener("click", switchToEraser);
