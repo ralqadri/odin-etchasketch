@@ -1,15 +1,11 @@
 const gridContainer = document.querySelector(".grid-container");
 
-let gridItem = document.createElement("div");
-gridItem.classList.add("grid-item");
-
-
-
 column: for (let i = 0; i < 16; i++) {
     let currentGridColumn = makeGridColumn();
     gridContainer.appendChild(currentGridColumn);
     row: for (let j = 0; j < 16; j++) {
         let currentGridItem = makeGridItem();
+        currentGridItem.addEventListener("mouseover", changeToBlack)
         currentGridColumn.appendChild(currentGridItem);
     }
 }
@@ -28,3 +24,14 @@ function makeGridItem() {
 
     return gridItem;
 }
+
+function changeToBlack() {
+    this.classList.add("color-black");
+}
+
+function switchToEraser() {
+
+}
+
+const turnOffButton = document.querySelector(".removeColorBlack");
+turnOffButton.addEventListener("click", turnOffButton.removeEventListener("mouseOver,"));
