@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   all: unset;
 
@@ -9,31 +15,26 @@ body {
 }
 
 .container {
-  border: 2px solid grey;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin: 2vw;
-  margin-top: 1vw;
-  padding: 0.5vw;
 }
 
 .header {
   display: flex;
 
   color: white;
-  font-size: 24px;
+  -webkit-text-stroke: 2px rgba(64, 64, 64, 0.5);
+  font-size: 30px;
   font-weight: bolder;
 }
 
 /* https://css-tricks.com/dont-overthink-flexbox-grids/ */
 
 .grid-container {
-  /* border: 5px solid rgb(26, 26, 26); */
-  border: 3px solid red;
+  border: 5px solid rgb(26, 26, 26);
+  background-color: rgb(26, 26, 26);
 
   width: 500px;
   height: 500px;
@@ -50,7 +51,7 @@ body {
 }
 
 .grid-item {
-  border: 1px solid green;
+  border: 1px solid rgba(64, 64, 64, 0.15);
   background: white;
 
   aspect-ratio: 1 / 1;
