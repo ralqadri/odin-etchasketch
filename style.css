@@ -108,5 +108,25 @@ body {
 }
 
 .color.color-white {
-  background: white !important;
+  background: rgba(255, 255, 255, 1) !important;
+}
+
+.color.color-yellow {
+  background: #fff9ca;
+}
+
+.color.color-orange {
+  background: #ffdeb4;
+}
+
+.color.color-pink {
+  background: #ffb4b4;
+}
+
+.color.color-purple {
+  background: #b2a4ff;
+}
+
+.color.color-blue {
+  background: #c1efff;
 }
