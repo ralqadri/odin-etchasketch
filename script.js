@@ -52,8 +52,23 @@ function switchToEraser() {
     })
 }
 
+function updateGridSize() {
+    const newGridSize = this.value;
+    console.log(`new grid size: ${newGridSize}`);
+    // gridValue.textContent =
+}
+
+// Black button
 const blackButton = document.querySelector(".btn-black");
 blackButton.addEventListener("click", switchToBlack);
 
+// Eraser button
 const eraserButton = document.querySelector(".btn-eraser");
 eraserButton.addEventListener("click", switchToEraser);
+
+// Grid size: slider & value(s)
+const gridSlider = document.querySelector(".btn-gridsize");
+gridSlider.addEventListener("change", updateGridSize);
+
+const gridValue = document.querySelector(".value-gridsize");
+gridValue.textContent = `${gridSlider.value} x ${gridSlider.value}`;
