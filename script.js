@@ -1,14 +1,21 @@
 const gridContainer = document.querySelector(".grid-container");
 
-column: for (let i = 0; i < 16; i++) {
-    let currentGridColumn = makeGridColumn();
-    gridContainer.appendChild(currentGridColumn);
-    row: for (let j = 0; j < 16; j++) {
-        let currentGridItem = makeGridItem();
-        currentGridItem.addEventListener("mouseover", changeToBlack)
-        currentGridColumn.appendChild(currentGridItem);
+makeGridCanvas();
+
+function makeGridCanvas(size = 16) {
+    gridContainer.textContent = '';
+
+    column: for (let i = 0; i < size; i++) {
+        let currentGridColumn = makeGridColumn();
+        gridContainer.appendChild(currentGridColumn);
+        row: for (let j = 0; j < size; j++) {
+            let currentGridItem = makeGridItem();
+            currentGridItem.addEventListener("mouseover", changeToBlack)
+            currentGridColumn.appendChild(currentGridItem);
+        }
     }
 }
+
 
 function makeGridColumn() {
     let gridColumn = document.createElement("div");
@@ -25,8 +32,6 @@ function makeGridItem() {
     return gridItem;
 }
 
-const gridItems = document.querySelectorAll(".grid-item");
-
 function changeToBlack() {
     this.classList.add("color");
     this.classList.add("color-black");
@@ -37,6 +42,7 @@ function eraseColor() {
 }
 
 function switchToBlack() {
+    const gridItems = document.querySelectorAll(".grid-item");
     console.log("switching to black...")
     gridItems.forEach((gridItem) => {
         gridItem.removeEventListener("mouseover", eraseColor);
@@ -45,6 +51,7 @@ function switchToBlack() {
 }
 
 function switchToEraser() {
+    const gridItems = document.querySelectorAll(".grid-item");
     console.log("switching to eraser...")
     gridItems.forEach((gridItem) => {
         gridItem.removeEventListener("mouseover", changeToBlack);
@@ -54,8 +61,8 @@ function switchToEraser() {
 
 function updateGridSize() {
     const newGridSize = this.value;
-    console.log(`new grid size: ${newGridSize}`);
-    // gridValue.textContent =
+    gridValue.textContent = `${gridSlider.value} x ${gridSlider.value}`;
+    makeGridCanvas(newGridSize);
 }
 
 // Black button

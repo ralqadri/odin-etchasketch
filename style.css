@@ -88,12 +88,14 @@ body {
 
 .btn-gridsize {
   margin-left: 1.25rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .slider {
-  display: flex;
   color: white;
+  font-family: monospace;
+
+  display: flex;
 }
 
 .footer {
