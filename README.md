@@ -4,6 +4,5 @@ A JavaScript-based project that replicates the Etch-a-Sketch toy, made for The O
 # Live demo
 The live demo of this project is available here: https://ralqadri.github.io/odin-etchasketch/
 
-<!--- # Preview
-![image](https://github.com/ralqadri/odin-rockpaperscissors/assets/57430190/febc843f-c20c-4330-bf37-8e6c8320bfbd)
---->
+# Preview
+![20240423_1304_chrome](https://github.com/ralqadri/odin-etchasketch/assets/57430190/0e832143-00f9-45f7-b857-7907b5bc69b1)
